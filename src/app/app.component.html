@@ -14,3 +14,10 @@
     <button (click)="deleteItem(i)">delete</button>
   </li>
 </ul>
+
+<div *ngFor="let product of products">
+  {{ product.title }}
+  <!-- para modificar un atributo del html se utiliza llaves cuadradas -->
+  <img [src]="product.image" alt="">
+  {{ product.price }}
+</div>
