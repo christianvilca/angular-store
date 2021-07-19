@@ -7,7 +7,10 @@ import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
 import { ExponentialPipe } from './exponential.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
+import { ContactComponent } from './contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { AppRoutingModule } from './app-routing.module'
     ProductComponent,
     CartComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    HomeComponent,
+    ProductsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
