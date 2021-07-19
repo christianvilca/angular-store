@@ -5,3 +5,4 @@
 <p>{{ today | date:'medium' }}</p>
 
 <button (click)="addCart()">Agregar al carrito</button>
+<a [routerLink]="['/products', product.id ]" >Ver detalle</a>

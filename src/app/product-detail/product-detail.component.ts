@@ -4,12 +4,17 @@ import { ActivatedRoute, Params } from '@angular/router'
 
 import { ProductsService } from './../products.service'
 
+import { Product } from './../product.model';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
+
+  // variable publica del componente para que llegue al template
+  product!: Product;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,8 +25,7 @@ export class ProductDetailComponent implements OnInit {
     // escucha los cambios que hay en los parametros
     this.route.params.subscribe((params: Params) => {
       const id = params.id
-      const product = this.productsService.getProduct(id);
-      console.log(product)
+      this.product = <Product>this.productsService.getProduct(id);
     });
   }
 
