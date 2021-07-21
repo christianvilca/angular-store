@@ -14,6 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { LayoutComponent } from './layout/layout.component'
 
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
