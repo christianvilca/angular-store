@@ -3,32 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './components/product.component';
+import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
-import { ExponentialPipe } from './exponential.pipe';
-import { HighlightDirective } from './highlight.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component'
+
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     CartComponent,
-    ExponentialPipe,
-    HighlightDirective,
     ProductsComponent,
     ContactComponent,
     DemoComponent,
-    HeaderComponent,
-    FooterComponent,
     PageNotFoundComponent,
     ProductDetailComponent,
     LayoutComponent
@@ -36,7 +30,8 @@ import { LayoutComponent } from './layout/layout.component'
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
