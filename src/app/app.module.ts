@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component'
 
 import { SharedModule } from './shared/shared.module';
@@ -15,7 +14,6 @@ import { CoreModule } from './core/core.module';
   declarations: [
     AppComponent,
     CartComponent,
-    PageNotFoundComponent,
     LayoutComponent
   ],
   imports: [
