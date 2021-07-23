@@ -4,8 +4,9 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { NavComponent } from './components/nav/nav.component'
 
 const routes: Routes = [
-  { path: 'create', component: ProductFormComponent },
-  { path: '', component: NavComponent },
+  { path: '', component: NavComponent, children: [
+    { path: 'create', component: ProductFormComponent },
+  ]},
 ];
 
 @NgModule({
