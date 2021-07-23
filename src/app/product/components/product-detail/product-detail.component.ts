@@ -24,8 +24,16 @@ export class ProductDetailComponent implements OnInit {
     // escucha los cambios que hay en los parametros
     this.route.params.subscribe((params: Params) => {
       const id = params.id
-      this.product = this.productsService.getProduct(id)
+      this.fetchProduct(id)
+      //this.product = this.productsService.getProduct(id)
     });
+  }
+
+  fetchProduct(id: string) {
+    this.productsService.getProduct(id)
+      .subscribe( product => {
+        this.product = product;
+      })
   }
 
 }
