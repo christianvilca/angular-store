@@ -60,6 +60,29 @@
               ],
               "outputHashing": "all"
             },
+            "stag": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stag.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "aot": false,
+              "buildOptimizer": false
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -76,6 +99,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-store:build:production"
+            },
+            "stag": {
+              "browserTarget": "angular-store:build:stag"
             },
             "development": {
               "browserTarget": "angular-store:build:development"
