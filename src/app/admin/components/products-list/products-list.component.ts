@@ -12,13 +12,14 @@ import { Product } from '../../../core/models/product.model';
 export class ProductsListComponent implements OnInit {
 
   products: Product[] = [];
-  displayedColumns: string[] = ['id'];
+  displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
 
   constructor(
     private productsService: ProductsService
   ) { }
 
   ngOnInit(): void {
+    this.fetchProducts()
   }
 
   fetchProducts() {
