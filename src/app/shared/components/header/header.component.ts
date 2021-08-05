@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { map } from 'rxjs/operators'
+
 import { CartService } from './../../../core/services/cart.service'
 
 @Component({
@@ -14,9 +16,13 @@ export class HeaderComponent implements OnInit {
   constructor(
     private cartService: CartService
   ) {
-    this.cartService.cart$.subscribe(products => {
-      console.log(products);
-      this.total = products.length
+    this.cartService.cart$
+    .pipe(
+      map(products => products.length)
+    )
+    // ya no llega la lista de productos sino el total (llega transformado)
+    .subscribe(total => {
+      this.total = total
     })
   }
 
