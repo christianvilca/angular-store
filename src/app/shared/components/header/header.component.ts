@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators'
 
@@ -11,19 +12,20 @@ import { CartService } from './../../../core/services/cart.service'
 })
 export class HeaderComponent implements OnInit {
 
-  total = 0;
+  // hacemos que total sea un observable
+  total$!: Observable<number>;
 
   constructor(
     private cartService: CartService
   ) {
-    this.cartService.cart$
+    // ya no nos suscribimos
+    // Estamos guardando el valor en un observable (flujo de datos que va estar vivo)
+    // vamos a suscribirnos pero desde el template
+    this.total$ = this.cartService.cart$
     .pipe(
       map(products => products.length)
     )
-    // ya no llega la lista de productos sino el total (llega transformado)
-    .subscribe(total => {
-      this.total = total
-    })
+    // no quiere suscribirme sino evaluar una suscripcion
   }
 
   ngOnInit(): void {
