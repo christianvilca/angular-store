@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomeModule ) }, // llamada al modulo
     { path: 'products', canActivate: [AdminGuard], loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
     { path: 'contact', canActivate: [AdminGuard] , loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
+    { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) },
     { path: 'demo', canActivate: [AdminGuard] , loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
   ]},
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
