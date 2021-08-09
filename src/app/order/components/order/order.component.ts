@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AngularFirestore  } from '@angular/fire/firestore';
 
 import { Product } from './../../../core/models/product.model'
 import { CartService } from './../../../core/services/cart.service'
