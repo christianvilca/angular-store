@@ -9,12 +9,12 @@ const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomeModule ) }, // llamada al modulo
-    { path: 'products', canActivate: [AdminGuard], loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
-    { path: 'contact', canActivate: [AdminGuard] , loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
+    { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
+    { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
     { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) },
-    { path: 'demo', canActivate: [AdminGuard] , loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
+    { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
   ]},
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin', canActivate: [AdminGuard], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: '**', loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) },
 ];
